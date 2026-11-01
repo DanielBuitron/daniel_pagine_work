@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daniel Felipe Buitrón · Software a tu medida: ERP, automatización, IA y páginas web</title>
+<meta name="description" content="Programador de software: ERP, automatización, inteligencia artificial y APIs. Más de 50 proyectos con resultados positivos.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0709;--bg2:#150d12;--tx:#faf3ee;--mu:#b3a3ab;--bd:rgba(255,255,255,.09);--a:#ff6b9a;--b:#f0cf9a;--c:#f5dcae;--g:linear-gradient(120deg,#ff6b9a,#f0cf9a);--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.f{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.aur{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.aur i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.38;animation:fl 18s ease-in-out infinite alternate}
+.aur i:nth-child(1){width:46vw;height:46vw;background:#9f1239;top:-12vw;left:-8vw}
+.aur i:nth-child(2){width:38vw;height:38vw;background:#581c87;top:30vh;right:-10vw;animation-delay:-6s}
+.aur i:nth-child(3){width:34vw;height:34vw;background:#b45309;bottom:-14vw;left:25vw;animation-delay:-11s;opacity:.25}
+@keyframes fl{to{transform:translate(6vw,5vh) scale(1.15)}}
+.grid{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 70%);opacity:.5}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(240,207,154,.18),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%}
+.bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--g);z-index:60}
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:26px;padding:10px 12px 10px 22px;border:1px solid var(--bd);border-radius:99px;background:rgba(21,13,18,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);width:min(920px,calc(100% - 24px))}
+nav b{font-family:'Space Grotesk';font-size:17px;margin-right:auto}nav b span{color:var(--b)}
+nav a.l{font-size:14px;color:var(--mu);transition:.3s}nav a.l:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:99px;font-weight:500;background:var(--g);color:#06060d;transition:.35s;position:relative;overflow:hidden;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px -8px rgba(240,207,154,.55)}
+.btn.o{background:transparent;color:var(--tx);border:1px solid var(--bd)}.btn.o:hover{border-color:var(--b);box-shadow:none;background:rgba(240,207,154,.07)}
+nav .btn{padding:9px 20px;font-size:14px}
+section{padding:110px 6vw;max-width:1240px;margin:auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:150px;text-align:center;align-items:center}
+.tag{display:inline-flex;gap:10px;align-items:center;padding:7px 16px;border:1px solid var(--bd);border-radius:99px;font-size:13px;color:var(--mu);background:rgba(255,255,255,.03)}
+.tag:before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 #34d399;animation:pl 2s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 10px transparent}}
+h1{font-size:clamp(40px,7.4vw,92px);line-height:1.02;margin:28px 0 24px;font-weight:700;max-width:1000px}
+.gt{background:linear-gradient(120deg,#fbeed6,#f0cf9a,#f5dcae,#fbeed6);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 7s linear infinite}
+@keyframes sh{to{background-position:250% 0}}
+.hero p{max-width:640px;color:var(--mu);font-size:19px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:38px}
+.stats{display:flex;gap:clamp(24px,6vw,70px);margin-top:70px;flex-wrap:wrap;justify-content:center}
+.stats div{text-align:center}.stats strong{display:block;font:700 clamp(34px,5vw,54px)/1 'Space Grotesk';background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{font-size:14px;color:var(--mu)}
+.mq{border-block:1px solid var(--bd);overflow:hidden;padding:20px 0;background:rgba(255,255,255,.02);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq div{display:flex;gap:46px;width:max-content;animation:mq 38s linear infinite}
+.mq span{font:500 22px 'Space Grotesk';color:var(--mu);white-space:nowrap}.mq span:nth-child(3n){color:#fbeed6}.mq span:nth-child(3n+1){color:#f5dcae}
+@keyframes mq{to{transform:translateX(-50%)}}
+.eb{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
+h2{font-size:clamp(32px,4.6vw,58px);line-height:1.08;margin-bottom:18px;max-width:780px}
+.sub{color:var(--mu);max-width:620px;font-size:18px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:56px}
+.card{position:relative;padding:30px;border:1px solid var(--bd);border-radius:var(--r);background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));overflow:hidden;transition:transform .4s,border-color .4s;transform-style:preserve-3d;grid-column:span 2}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(240,207,154,.22),transparent 60%);opacity:0;transition:.4s}
+.card:hover{border-color:rgba(240,207,154,.5)}.card:hover:before{opacity:1}
+.card.w{grid-column:span 3}.card.x{grid-column:span 4}
+.card>*{position:relative}
+.n{font:500 13px 'Space Grotesk';color:var(--b);margin-bottom:46px;display:flex;justify-content:space-between}
+.card h3{font-size:24px;margin-bottom:10px}.card p{color:var(--mu);font-size:15px}
+.erp{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.flow{display:flex;flex-direction:column;gap:12px}
+.fl{display:flex;align-items:center;gap:14px;padding:16px 20px;border:1px solid var(--bd);border-radius:16px;background:rgba(255,255,255,.03);transition:.4s}
+.fl i{width:10px;height:10px;border-radius:50%;background:var(--g)}.fl small{margin-left:auto;color:var(--mu)}
+.fl.on{border-color:var(--b);background:rgba(240,207,154,.08);transform:translateX(12px)}
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:50px}
+.mod{padding:20px 22px;border:1px solid var(--bd);border-radius:16px;background:rgba(255,255,255,.025);transition:.35s}
+.mod:hover{transform:translateY(-6px);border-color:var(--a);background:rgba(240,207,154,.09)}
+.mod b{display:block;font:500 17px 'Space Grotesk';margin-bottom:4px}.mod span{font-size:13.5px;color:var(--mu);line-height:1.5;display:block}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.st{padding:34px;border-radius:var(--r);border:1px solid var(--bd);background:var(--bg2)}
+.st em{font:700 64px/1 'Space Grotesk';font-style:normal;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}
+.st h3{font-size:26px;margin:18px 0 8px}.st p{color:var(--mu)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px;margin-top:50px}
+.why div{border-top:1px solid var(--bd);padding-top:20px}.why h3{font-size:20px;margin-bottom:8px}.why p{color:var(--mu);font-size:15px}.why h3 span{color:var(--b);margin-right:10px;font-size:14px}
+.end{margin:40px 6vw 80px;max-width:1240px;margin-inline:auto;text-align:center;padding:90px 6vw;border-radius:34px;border:1px solid var(--bd);background:radial-gradient(ellipse at 50% 0%,rgba(240,207,154,.3),transparent 65%),var(--bg2)}
+.end h2{margin-inline:auto}.end .sub{margin:0 auto}
+.tel{font:700 clamp(28px,4vw,44px) 'Space Grotesk';margin-top:26px;display:block}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:0 0 40px}
+.rv{opacity:0;transform:translateY(40px) scale(.98);filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+.rv.in{opacity:1;transform:none;filter:none}
+@media(max-width:900px){nav a.l{display:none}.bento,.steps,.why{grid-template-columns:1fr}.card,.card.w,.card.x{grid-column:auto}.erp{grid-template-columns:1fr;gap:34px}section{padding:80px 6vw}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
+
+.pg{display:none}.pg.act{display:block;animation:pi .8s cubic-bezier(.2,.7,.2,1)}
+@keyframes pi{from{opacity:0;transform:translateY(34px);filter:blur(10px)}}
+.pg>section:first-child{padding-top:150px}.pg>.end{margin-top:130px}
+nav{gap:18px}nav a.l.cur{color:#fff;position:relative}nav a.l.cur:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--g)}
+.hero{position:relative}
+.fz{position:absolute;inset:0;pointer-events:none}
+.fz span{position:absolute;left:var(--x);top:var(--y);padding:9px 16px;border:1px solid var(--bd);border-radius:14px;background:rgba(21,13,18,.65);backdrop-filter:blur(8px);font-size:14px;animation:bob 6s ease-in-out infinite alternate;animation-delay:var(--d)}
+@keyframes bob{to{transform:translateY(-20px) rotate(2deg)}}
+.ic{font-style:normal;font-size:32px;filter:drop-shadow(0 0 14px rgba(240,207,154,.8))}
+.build{height:560vh;position:relative}
+.bs{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:center;padding:96px 6vw 30px;max-width:1240px;margin:auto}
+.pct{display:flex;gap:12px;align-items:baseline;margin-top:14px;color:var(--mu);font-size:14px}.pct span:first-child{font:700 40px 'Space Grotesk';color:var(--tx)}
+.pbar{height:5px;background:var(--bd);border-radius:9px;overflow:hidden;margin-top:26px}.pbar i{display:block;height:100%;width:0;background:var(--g);box-shadow:0 0 16px var(--b)}
+.win{border:1px solid var(--bd);border-radius:20px;background:rgba(21,13,18,.85);backdrop-filter:blur(14px);box-shadow:0 50px 120px -30px rgba(240,207,154,.55);overflow:hidden}
+.wb{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid var(--bd);align-items:center}
+.wb u{width:11px;height:11px;border-radius:50%;background:#ff5f57}.wb u:nth-child(2){background:#febc2e}.wb u:nth-child(3){background:#28c840}
+.wb em{margin-left:14px;font:12px ui-monospace,Consolas,monospace;color:var(--mu);font-style:normal;padding:4px 12px;border-radius:8px;background:rgba(255,255,255,.05)}
+.wbody{display:grid;grid-template-columns:150px 1fr;min-height:350px}
+.side{border-right:1px solid var(--bd);padding:12px;display:flex;flex-direction:column;gap:6px}
+.side div{padding:7px 10px;border-radius:10px;font-size:12.5px;color:var(--mu);opacity:0;transform:translateX(-16px);transition:.5s}.side div.on{opacity:1;transform:none;background:rgba(240,207,154,.13);color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px;align-content:start}
+.tile{padding:14px;border:1px solid var(--bd);border-radius:14px;background:rgba(255,255,255,.04);opacity:0;transform:scale(.6) translateY(24px);transition:.6s cubic-bezier(.2,.9,.3,1.4)}.tile.on{opacity:1;transform:none;border-color:rgba(240,207,154,.35)}
+.tile b{display:block;font-size:28px;line-height:1.2}.tile span{font-size:12px;color:var(--mu);display:block;margin-top:4px}
+.term{font:13px ui-monospace,Menlo,Consolas,monospace;color:#f5dcae;padding:12px 16px;border-top:1px solid var(--bd);background:rgba(0,0,0,.35);white-space:nowrap;overflow:hidden}
+@media(max-width:1280px){.fz{display:none}}
+@media(max-width:900px){nav{gap:16px;overflow-x:auto;padding:10px 18px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a.l{display:inline-block;white-space:nowrap}nav b,nav .btn{display:none}
+.bs{grid-template-columns:1fr;gap:14px;padding-top:84px}.bs .sub,.pct span:last-child{display:none}.bs h2{font-size:28px;margin-bottom:0}.pbar{margin-top:12px}.wbody{grid-template-columns:1fr;min-height:230px}.side{display:none}.tile{padding:10px}.tile b{font-size:22px}.tile span{font-size:11px}.pg>section:first-child{padding-top:110px}}
+
+.build{height:360vh}.bs{grid-template-columns:.8fr 1.2fr}
+[data-i] svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em}
+.ic{color:var(--a)}.ic svg{width:34px;height:34px}
+.fz i{color:var(--b);margin-right:8px;font-style:normal}.si{color:var(--a);margin-right:10px;font-style:normal}.si svg{width:.9em;height:.9em}
+.mod b i{color:var(--a);margin-right:9px;font-size:19px;font-style:normal}
+.bul{list-style:none;margin-top:22px;display:grid;gap:10px}.bul li{display:flex;gap:12px;align-items:center;font-size:15px;animation:up .5s both}
+.bul i{color:var(--b);width:22px;height:22px;border-radius:50%;border:1px solid rgba(240,207,154,.45);display:grid;place-items:center;font-size:12px;font-style:normal}
+@keyframes up{from{opacity:0;transform:translateY(10px)}}
+.live{margin-left:auto;font:500 11px Inter,sans-serif;color:#f5dcae;font-style:normal}
+.tiles{gap:12px}.tile{padding:16px;border-radius:16px;transition:.45s cubic-bezier(.2,.9,.3,1.3)}
+.tile .ti{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,rgba(255,107,154,.22),rgba(240,207,154,.18));border:1px solid rgba(255,107,154,.3);color:var(--a);font-size:24px;margin-bottom:12px}
+.tile b{font:500 15px 'Space Grotesk',sans-serif;display:block}
+.mb{display:flex;gap:4px;align-items:flex-end;height:28px;margin-top:12px}.mb s{flex:1;background:var(--g);border-radius:3px 3px 0 0;opacity:.8;transform-origin:bottom}
+.tile.on .mb s{animation:gr .9s both}@keyframes gr{from{transform:scaleY(.1)}}
+.tile.cur{box-shadow:0 0 0 1px var(--b),0 0 44px -8px rgba(240,207,154,.65)}
+.side div{display:flex;gap:9px;align-items:center}.side div i{color:var(--a);font-size:15px;font-style:normal}
+@media(max-width:900px){.tile .ti{width:34px;height:34px;font-size:18px;margin-bottom:6px}.mb{display:none}.tile b{font-size:12px}.bul{margin-top:10px;gap:4px}.bul li{font-size:13px}.bul li:nth-child(n+3){display:none}}
+
+.build{height:440vh}.gt{background-image:linear-gradient(120deg,#f5dcae,#f0cf9a,#ffa3c0,#f5dcae)}
+.mod.hot{border-color:rgba(255,107,154,.45);background:linear-gradient(150deg,rgba(255,107,154,.1),rgba(240,207,154,.06))}
+.wbody{position:relative}
+.lg{position:absolute;inset:0;z-index:3;background:var(--bg2);display:grid;place-items:center;transition:.7s cubic-bezier(.2,.7,.2,1)}
+.lg.off{opacity:0;transform:scale(1.06);filter:blur(8px);pointer-events:none}
+.lc{width:min(300px,88%);display:grid;gap:10px;text-align:center}
+.sh{width:54px;height:54px;margin:0 auto;border-radius:16px;display:grid;place-items:center;font-size:28px;color:var(--b);background:rgba(240,207,154,.12);border:1px solid rgba(240,207,154,.4);box-shadow:0 0 40px -8px rgba(240,207,154,.7)}
+.lc h4{font:700 20px 'Space Grotesk',sans-serif}.lc small{color:var(--mu);font-size:12.5px;margin-top:-6px}
+.fd{display:flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid var(--bd);border-radius:12px;background:rgba(255,255,255,.04);font-size:13px;text-align:left;min-height:42px}.fd i{color:var(--mu);font-style:normal}
+.cd{display:flex;gap:6px;justify-content:center}.cd b{width:34px;height:40px;border:1px solid var(--bd);border-radius:10px;display:grid;place-items:center;font:600 16px 'Space Grotesk',sans-serif;background:rgba(255,255,255,.03)}.cd.ok b{border-color:var(--b)}
+.lb{padding:12px;border-radius:12px;background:var(--g);color:#1a0b12;font-weight:600;font-size:14px;transition:.4s}.lb.ok{background:linear-gradient(120deg,#34d399,#86efac)}
+.sc{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.sc span{font-size:11.5px;padding:5px 10px;border:1px solid var(--bd);border-radius:99px;color:var(--mu);opacity:.45;transition:.4s}.sc span.on{opacity:1;color:#fff;border-color:rgba(240,207,154,.5);background:rgba(240,207,154,.12)}.sc i{margin-right:5px;color:var(--b);font-style:normal}
+@media(min-width:901px){.why{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.wbody{min-height:300px}.lc{gap:7px}.sh{width:42px;height:42px;font-size:22px}.cd b{width:28px;height:32px}.fd{padding:8px 12px;min-height:34px}}
+
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes rot{to{--ang:360deg}}
+.build{height:480vh}.bs{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;max-width:1240px;padding:84px 4vw 22px}
+.bt{display:flex;justify-content:space-between;width:min(1120px,100%);align-items:baseline}.bt .eb{margin:0}.hint{font-size:13px;color:var(--mu)}
+.winw{width:min(1120px,100%);height:min(640px,calc(100vh - 150px));padding:1.5px;border-radius:27px;background:conic-gradient(from var(--ang),#f0cf9a,#ff6b9a,#f5dcae,#9f1239,#f0cf9a);animation:rot 7s linear infinite;box-shadow:0 60px 140px -40px rgba(240,207,154,.5)}
+.win{height:100%;display:flex;flex-direction:column;border-radius:25px;background:#120b10}
+.wbody{flex:1;min-height:0;grid-template-columns:205px 1fr}.main{position:relative;overflow:hidden}
+.side{padding:14px 12px;gap:4px;overflow:hidden}.side div{opacity:.38;transform:none;font-size:13px;padding:9px 12px}.side div.dn{opacity:.8}.side div.cur{opacity:1;color:#fff;background:linear-gradient(120deg,rgba(240,207,154,.28),rgba(255,107,154,.16));box-shadow:inset 0 0 0 1px rgba(240,207,154,.4)}
+.lg{inset:0;grid-template-columns:1fr 1.05fr;gap:30px;padding:28px 34px;place-items:center stretch;background:#120b10}.lc{margin:auto;max-width:310px;width:100%}
+.mp{position:absolute;inset:0;padding:30px 34px;display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:center;transition:.22s}
+.mp.cl{opacity:0;transform:scale(.94);filter:blur(6px)}.mp.op{animation:op .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes op{from{opacity:0;transform:scale(.9) translateY(26px);filter:blur(10px)}}
+.mp:before{content:attr(data-n);position:absolute;right:18px;bottom:-34px;font:700 230px/1 'Space Grotesk',sans-serif;color:rgba(255,255,255,.035);pointer-events:none}
+.xp>*{position:relative}.big{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;font-size:34px;color:var(--a);background:linear-gradient(140deg,rgba(255,107,154,.2),rgba(240,207,154,.2));border:1px solid rgba(255,107,154,.4);box-shadow:0 0 0 0 rgba(255,107,154,.5);animation:pl2 2.4s infinite}
+@keyframes pl2{70%{box-shadow:0 0 0 16px transparent}}
+.sn{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--b);margin:20px 0 8px}.xp h3{font-size:clamp(28px,3.2vw,42px);line-height:1.05;margin-bottom:12px}.xp p{color:var(--mu);font-size:16px}
+.mk{border:1px solid var(--bd);border-radius:18px;background:rgba(255,255,255,.035);padding:16px;display:grid;gap:10px;position:relative;box-shadow:0 30px 70px -30px rgba(0,0,0,.8)}
+.mk>*{animation:up .55s both}.mk>:nth-child(1){animation-delay:.12s}.mk>:nth-child(2){animation-delay:.24s}.mk>:nth-child(3){animation-delay:.36s}.mk>:nth-child(4){animation-delay:.48s}.mk>:nth-child(5){animation-delay:.6s}
+.rw{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);font-size:13px}.rw span:first-child{font-weight:500}.rw .mu{color:var(--mu);margin-left:auto;font-size:12px}.rw .ch{margin-left:auto}.rw .mu+.ch{margin-left:0}
+.ch{font-style:normal;font-size:11px;padding:3px 10px;border-radius:99px;border:1px solid}.ch.g{color:#86efac;border-color:rgba(134,239,172,.4);background:rgba(134,239,172,.08)}.ch.o{color:#ffa3c0;border-color:rgba(255,107,154,.45);background:rgba(255,107,154,.1)}.ch.n{color:var(--tx);border-color:var(--bd)}
+.sp{flex:1;height:8px;border-radius:9px;background:var(--bd);overflow:hidden}.sp s{display:block;height:100%;background:var(--g);border-radius:9px;animation:gx 1.1s .3s both}.sp.lo s{background:linear-gradient(90deg,#ff6b9a,#ff6b4a)}@keyframes gx{from{width:0}}
+.al{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,107,154,.45);background:rgba(255,107,154,.1);font-size:13px;color:#ffc2d4}.al i{font-style:normal;color:var(--a)}
+.pl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pl div{padding:12px;border-radius:12px;background:rgba(240,207,154,.1);border:1px solid rgba(240,207,154,.3);font-size:12px}.pl b{display:block;font-size:14px;margin-bottom:2px}.pl span{color:var(--mu)}
+.tk{padding:6px;border-radius:14px;border:1px dashed rgba(255,255,255,.2);display:grid;gap:4px}.tt{display:flex;justify-content:space-between;padding:10px 12px;font-size:15px}.tt b{font:700 22px 'Space Grotesk',sans-serif;color:var(--a)}
+.pay{display:flex;gap:8px}.pay span{flex:1;text-align:center;padding:9px;border-radius:10px;border:1px solid var(--bd);font-size:12.5px;color:var(--mu)}.pay .on{border-color:var(--b);color:#fff;background:rgba(240,207,154,.15)}
+.fl2{display:flex;gap:6px}.fl2 span{flex:1;text-align:center;font-size:12px;padding:8px;border-radius:10px;background:rgba(134,239,172,.08);border:1px solid rgba(134,239,172,.3);color:#86efac}
+.bb{max-width:82%;padding:10px 14px;border-radius:16px 16px 16px 4px;background:rgba(255,255,255,.07);font-size:13px}.bb.me{margin-left:auto;border-radius:16px 16px 4px 16px;background:linear-gradient(120deg,rgba(240,207,154,.35),rgba(240,207,154,.2))}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.kp div{padding:12px;border-radius:12px;background:rgba(255,255,255,.05)}.kp b{display:block;font:700 22px 'Space Grotesk',sans-serif;color:var(--a)}.kp span{font-size:11.5px;color:var(--mu)}
+.cp,.cap{font-size:11.5px;color:var(--mu);text-align:center}.cap{opacity:.6;font-size:10.5px;animation:none!important}
+.wf{display:flex;align-items:center;gap:16px;padding:12px 22px;border-top:1px solid var(--bd);font:500 13px 'Space Grotesk',sans-serif;color:var(--mu)}.wf .pbar{flex:1;margin:0}
+.card.f{grid-column:1/-1}.card.hot{border-color:rgba(255,107,154,.5);background:linear-gradient(150deg,rgba(255,107,154,.12),rgba(240,207,154,.06))}
+@media(max-width:900px){.hint{display:none}.wbody{grid-template-columns:1fr}.side{display:none}.lg,.mp{grid-template-columns:1fr;gap:12px;padding:16px;align-content:start;overflow:hidden}.lg{place-items:start}.lc{display:none}.mp:before{display:none}.big{width:46px;height:46px;font-size:24px}.sn{margin:10px 0 4px}.xp p{font-size:13.5px}.mk{padding:10px;gap:6px}.rw{padding:7px 9px}.mk>:nth-child(n+5){display:none}}
+
+.build{height:560vh}.side{position:relative;gap:2px}.side div{font-size:12.5px;padding:7px 11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wp{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#1a1017}.wpn{display:flex;gap:6px;padding:9px 12px;border-bottom:1px solid var(--bd)}.wpn s{width:34px;height:6px;border-radius:4px;background:var(--bd)}.wpn s:first-child{background:var(--g);width:52px}
+.wph{padding:16px;display:grid;gap:8px;justify-items:start}.wph b{font:700 20px 'Space Grotesk',sans-serif}.wph i{display:block;height:7px;border-radius:5px;background:var(--bd);width:90%;animation:gx 1.2s .4s both}.wph i.s{width:60%;animation-delay:.7s}.wph .lb{padding:8px 16px;font-size:12px}
+.wpc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px 16px}.wpc div{height:46px;border-radius:10px;background:linear-gradient(140deg,rgba(240,207,154,.28),rgba(255,107,154,.2));animation:up .5s both}.wpc div:nth-child(2){animation-delay:.2s}.wpc div:nth-child(3){animation-delay:.4s}
+.pr{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pr div{padding:8px;border-radius:12px;background:rgba(255,255,255,.05);font-size:12px}.pr div:before{content:"";display:block;height:46px;border-radius:8px;margin-bottom:6px;background:linear-gradient(140deg,rgba(240,207,154,.3),rgba(255,107,154,.22))}.pr b{display:block;color:var(--a);margin-top:2px}
+
+.ct{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.cl{display:grid;gap:12px;margin-top:30px}.cl a{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid var(--bd);border-radius:18px;background:rgba(255,255,255,.035);transition:.35s}.cl a:hover{border-color:var(--b);transform:translateX(6px)}.cl i{font-size:24px;color:var(--b);font-style:normal}.cl span{font-size:13px;color:var(--mu)}.cl b{display:block;font:500 17px 'Space Grotesk',sans-serif;color:var(--tx)}
+.fm{display:grid;gap:14px;padding:32px;border:1px solid var(--bd);border-radius:26px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));backdrop-filter:blur(10px)}.fm h3{font-size:24px}.fm label{display:grid;gap:6px;font-size:13px;color:var(--mu)}.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fm input,.fm select,.fm textarea{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--tx);font:inherit;font-size:15px;outline:0;transition:.3s}.fm input:focus,.fm select:focus,.fm textarea:focus{border-color:var(--b);box-shadow:0 0 0 4px rgba(240,207,154,.12)}.fm option{background:#150d12}.fm .btn{justify-content:center;width:100%;padding:15px}.fn{font-size:13px;color:var(--mu);text-align:center}.fn a{color:var(--b);text-decoration:underline}
+@media(max-width:900px){.ct{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.fm{padding:22px}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div><div class="aur"><i></i><i></i><i></i></div><div class="grid"></div><div id="glow"></div>
+<nav><b>DFB<span>.</span>dev</b><a class="l" href="#inicio">Inicio</a><a class="l" href="#servicios">Servicios</a><a class="l" href="#erp">ERP</a><a class="l" href="#modulos">Módulos</a><a class="l" href="#porque">Confianza</a><a class="btn" href="#contacto">Contacto</a></nav>
+
+<main class="pg" id="p-inicio"><header class="hero"><div class="fz"><span style="--x:5%;--y:30%;--d:0s"><i data-i="ai"></i>Inteligencia artificial</span><span style="--x:3%;--y:62%;--d:-2s"><i data-i="plug"></i>APIs</span><span style="--x:80%;--y:26%;--d:-1s"><i data-i="gear"></i>Automatización</span><span style="--x:84%;--y:58%;--d:-3s"><i data-i="chart"></i>Reportes en vivo</span><span style="--x:73%;--y:80%;--d:-4s"><i data-i="globe"></i>Web moderna</span><span style="--x:10%;--y:82%;--d:-5s"><i data-i="layers"></i>Todo conectado</span></div>
+<span class="tag">Hola, soy Daniel · Programador de software</span>
+<h1>Tu empresa merece un sistema que <span class="gt">trabaje como tú trabajas.</span></h1>
+
+<div class="cta"><a class="btn" href="https://wa.me/573227043082" target="_blank" rel="noopener">Hablemos de tu negocio →</a><a class="btn o" href="#servicios">Ver servicios</a></div>
+<div class="stats"><div><strong data-n="50">0</strong><span>proyectos entregados</span></div><div><strong data-n="19">0</strong><span>módulos para armar tu sistema</span></div><div><strong data-n="8">0</strong><span>servicios, de punta a punta</span></div></div>
+</header>
+
+<div class="mq"><div id="mq"></div></div>
+<div class="build" id="build"><div class="bs"><div class="bt"><span class="eb">Mira cómo armamos tu sistema</span><span class="hint">Sigue bajando y míralo crecer</span></div>
+<div class="winw"><div class="win"><div class="wb"><u></u><u></u><u></u><em>tuempresa.erp / panel</em><i class="live">● en vivo</i></div>
+<div class="wbody"><div class="side" id="side"></div><div class="main"><div class="lg" id="lg"><div class="lc"><div class="sh" data-i="shield"></div><h4>Iniciar sesión</h4><small>Acceso seguro al sistema</small><div class="fd"><i data-i="user"></i><span id="lu"></span></div><div class="fd"><i data-i="key"></i><span id="lp"></span></div><div class="cd" id="cd"><b></b><b></b><b></b><b></b><b></b><b></b></div><div class="lb" id="lb">Entrar</div><div class="sc" id="sc"><span><i data-i="key"></i>Cifrado</span><span><i data-i="shield"></i>2FA</span><span><i data-i="scan"></i>Auditoría</span></div></div><div id="li"></div></div><div class="mp cl" id="mp"></div></div></div>
+<div class="wf"><span id="bstep">00/12</span><div class="pbar"><i id="bfill"></i></div><span id="bpct">0%</span></div></div></div></div></div>
+<section style="text-align:center;padding:60px 6vw 40px"><h2 class="rv" style="margin-inline:auto">Tu sistema, paso a paso y a tu ritmo.</h2><div class="cta"><a class="btn" href="#contacto">Quiero el mío →</a><a class="btn o" href="#servicios">Ver servicios</a></div></section>
+
+</main><main class="pg" id="p-servicios"><section id="s-servicios">
+<div class="eb rv">Lo que puedo hacer por ti</div><h2 class="rv">Contigo, de la idea al sistema funcionando.</h2><p class="sub rv">Desde un ERP completo hasta tu página web: todo conectado y con una sola persona que te entiende.</p>
+<div class="bento">
+<div class="card x rv"><div class="n"><span>01</span><i class="ic" data-i="layers"></i><span>Insignia</span></div><h3>Software ERP</h3><p>El sistema que pone tu empresa en orden: ventas, compras, inventario, producción, nómina, facturación, cartera, contabilidad y seguimiento de clientes. Todo conversa entre sí y cada dato queda con historial.</p></div>
+<div class="card rv"><div class="n"><span>02</span><i class="ic" data-i="code"></i></div><h3>Programas personalizados</h3><p>Si tu forma de trabajar es única, tu software también debe serlo. Lo construyo para tu proceso.</p></div>
+<div class="card rv"><div class="n"><span>03</span><i class="ic" data-i="gear"></i></div><h3>Automatización</h3><p>Deja lo repetitivo al sistema: avisos, documentos, cobros, cierres y seguimientos. Tu equipo se enfoca en decidir.</p></div>
+<div class="card rv"><div class="n"><span>04</span><i class="ic" data-i="ai"></i></div><h3>Inteligencia artificial</h3><p>Asistentes que conocen tu negocio, atienden a tus clientes y consultan pedidos, saldos e inventario, incluso fuera de horario.</p></div>
+<div class="card rv"><div class="n"><span>05</span><i class="ic" data-i="plug"></i></div><h3>Consumo de APIs</h3><p>Conecto lo que ya usas (mensajería, pagos, logística, bancos, facturación) para que la información viaje sola.</p></div>
+<div class="card w rv"><div class="n"><span>06</span><i class="ic" data-i="globe"></i></div><h3>Páginas web</h3><p>Una página moderna con tu identidad, fácil de usar para tus clientes y conectada con tu sistema, catálogo, formulario o WhatsApp.</p></div>
+<div class="card w rv"><div class="n"><span>07</span><i class="ic" data-i="chart"></i></div><h3>Reportes</h3><p>Los informes como tú los necesites: resumidos o detallados, por fechas, área, vendedor o cliente. Listos para tu reunión o tu cierre.</p></div>
+<div class="card w hot rv"><div class="n"><span>08</span><i class="ic" data-i="pos"></i><span>Nuevo</span></div><h3>Punto de venta (POS)</h3><p>Vende en el mostrador con rapidez: cliente, productos y pago al instante, conectado a tu inventario, facturación y cartera.</p></div>
+<div class="card w hot rv"><div class="n"><span>09</span><i class="ic" data-i="store"></i><span>Nuevo</span></div><h3>E-commerce</h3><p>Tu tienda abierta las 24 horas: catálogo, carrito y pago, con los pedidos llegando directo a tu sistema.</p></div>
+</div></section>
+
+<section><div class="eb rv">Así trabajamos juntos</div><h2 class="rv">Tres pasos, sin enredos y contigo en cada uno.</h2>
+<div class="steps"><div class="st rv"><em>01</em><h3><i class="si" data-i="chat"></i>Escucho</h3><p>Primero me cuentas cómo trabaja tu empresa. Yo escucho y entiendo.</p></div><div class="st rv"><em>02</em><h3><i class="si" data-i="gear"></i>Construyo</h3><p>Armo el programa a tu medida, listo para usar desde el primer día.</p></div><div class="st rv"><em>03</em><h3><i class="si" data-i="plug"></i>Conecto</h3><p>Uno tus áreas, tus herramientas, tus reportes y tu página para que todo fluya.</p></div></div></section>
+
+</main><main class="pg" id="p-erp"><section id="s-erp"><div class="erp">
+<div><div class="eb rv">Primero, ¿qué es un ERP?</div><h2 class="rv">Escribes el dato una vez. Todo tu negocio lo ve.</h2><p class="sub rv">Un ERP reúne toda tu operación en un solo sistema, en vez de un archivo, un chat o un programa por cada área. Y a tu medida: los nombres, los pasos y los reportes salen de tu forma de trabajar.</p></div>
+<div class="flow rv" id="flow">
+<div class="fl"><i></i>Se registra una venta<small>Ventas</small></div><div class="fl"><i></i>Se descuenta el inventario<small>Inventario</small></div><div class="fl"><i></i>Se genera la factura<small>Facturación</small></div><div class="fl"><i></i>Queda en la cartera<small>Cartera</small></div><div class="fl"><i></i>Alimenta la contabilidad<small>Contabilidad</small></div><div class="fl"><i></i>Se ve en el tablero<small>Tableros</small></div>
+</div></div></section>
+
+</main><main class="pg" id="p-modulos"><section id="s-alcance"><div class="eb rv">Lo que puede incluir tu sistema</div><h2 class="rv">Elige las piezas que tu negocio necesita.</h2><p class="sub rv">Lo definimos juntos y, cuando tu negocio crezca, sumamos lo que haga falta.</p><div class="mods" id="mods"></div></section>
+
+</main><main class="pg" id="p-porque"><section id="s-porque"><div class="eb rv">Confianza al escogernos</div><h2 class="rv">Tranquilidad para tu negocio y para ti.</h2>
+<div class="why">
+<div class="rv"><h3><span>01</span>Parto de tu necesidad</h3><p>Tu sistema nace de cómo trabajas tú: tus pasos, tus nombres y tus reportes.</p></div>
+<div class="rv"><h3><span>02</span>Una sola persona, de punta a punta</h3><p>Hablas conmigo de principio a fin: entiendo tu negocio y construyo el ERP, la automatización, la IA, las APIs y la página.</p></div>
+<div class="rv"><h3><span>03</span>Cubro toda tu operación</h3><p>Tu información no se reparte en cinco programas distintos.</p></div>
+<div class="rv"><h3><span>04</span>Todo queda conectado</h3><p>Se acabó copiar datos a mano de un sistema a otro.</p></div>
+<div class="rv"><h3><span>05</span>Se ve bien y se entiende</h3><p>Páginas con diseño propio y reportes claros, listos para que decidas.</p></div>
+<div class="rv"><h3><span>06</span>Crece contigo</h3><p>¿Surge un proceso nuevo? Sumamos el módulo, sin empezar de cero.</p></div>
+<div class="rv"><h3><span>07</span>Seguridad desde el diseño</h3><p>Tu información protegida desde el primer día: contraseñas cifradas, verificación en dos pasos y permisos por rol.</p></div>
+<div class="rv"><h3><span>08</span>Tu información bajo control</h3><p>Cada persona entra solo a lo suyo, y siempre sabes quién cambió qué.</p></div>
+</div></section>
+
+</main><main class="pg" id="p-contacto"><section class="ct"><div><div class="eb rv">Contacto</div><h2 class="rv">Hablemos de tu negocio.</h2><p class="sub rv">Cuéntame cómo trabaja tu empresa y te propongo un sistema a tu medida: ERP, automatización, inteligencia artificial, conexiones y página web.</p>
+<div class="cl rv"><a href="https://wa.me/573227043082" target="_blank" rel="noopener"><i data-i="chat"></i><div><span>WhatsApp</span><b>322 704 3082</b></div></a><a href="mailto:daniel5480@hotmail.com"><i data-i="mail"></i><div><span>Correo</span><b>daniel5480@hotmail.com</b></div></a><a href="tel:+573227043082"><i data-i="phone"></i><div><span>Llamada</span><b>322 704 3082</b></div></a></div></div>
+<form class="fm rv" id="cf"><h3>Cuéntame un poco de ti</h3>
+<div class="g2"><label>Tu nombre *<input name="nombre" required autocomplete="name"></label><label>Tu empresa<input name="empresa" autocomplete="organization"></label></div>
+<div class="g2"><label>WhatsApp o teléfono *<input name="telefono" required inputmode="tel" autocomplete="tel"></label><label>Tu correo<input name="correo" type="email" autocomplete="email"></label></div>
+<label>¿Qué necesitas?<select name="interes"><option>Un ERP a la medida</option><option>Nómina</option><option>Inventario y bodega</option><option>Ventas, cotizaciones y punto de venta (POS)</option><option>Facturación, cartera y contabilidad</option><option>Página web o e-commerce</option><option>Automatización o inteligencia artificial</option><option>Conectar mis sistemas (APIs)</option><option>Otra cosa, te cuento</option></select></label>
+<label>Cuéntame cómo trabaja tu empresa<textarea name="mensaje" rows="4" placeholder="¿Qué te gustaría mejorar o automatizar?"></textarea></label>
+<input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+<button class="btn" type="submit">Enviar mi solicitud →</button><p class="fn" id="cfm">Tus datos le llegan directo a Daniel por WhatsApp y por correo.</p></form></section></main><footer>© <span id="y"></span> Daniel Felipe Buitrón Velásquez · Programador de software</footer>
+
+<script>
+const M=[["Ciberseguridad","Tu información protegida: contraseñas cifradas, verificación en dos pasos, permisos por rol y registro de quién hizo qué."],["Nómina","Tu equipo y sus pagos en orden: empleados, novedades, liquidación e historial."],["Talento humano","Cargos, ingresos, permisos y toda la información de tu equipo en un solo lugar."],["Inventario","Sabe qué tienes y qué se acaba: existencias, mínimos, entradas, salidas y alertas."],["Bodega","Ubicación, reservas y movimiento de lo que entra y lo que sale."],["Compras","Proveedores, órdenes y recepción, con el costo alimentando tu inventario."],["Ventas","Acompaña a cada cliente: primer contacto, cotización, pedido y cobro."],["Cotizaciones","Propuestas claras con precio y condiciones, y un paso directo al pedido."],["Punto de venta","Vende en el mostrador con cliente, productos y pago al instante."],["Facturación","Facturas ligadas al pedido, al inventario y a la cartera."],["Cartera","Quién te debe y cuánto, sin armar el cuadro a mano."],["Contabilidad","Pagos, comprobantes y tu dinero cruzado con la operación."],["CRM completo","Ficha del cliente, conversaciones, seguimiento y tu próxima acción."],["Producción","Cada pedido en planta, de recibido a alistado, con responsable y estado."],["Logística","Despachos, guías y entregas, desde que el pedido está listo."],["WhatsApp","Bandeja de chats y un asistente que arma la solicitud de tu cliente."],["Tableros","Cómo va tu día de un vistazo: ventas, saldos, producción e inventario."],["Alertas","Avisos de lo que necesita tu atención: un saldo, poco stock, un pedido detenido."],["Página web","Una página moderna con tu identidad, conectada a tu sistema, catálogo, formulario o WhatsApp."],["E-commerce","Tu tienda en línea con catálogo, carrito y pago, conectada a pedidos, inventario y facturación."],["Usuarios y permisos","Cada persona entra solo a lo suyo, y queda registrado quién cambió qué."]];
+const E=["shield","wallet","users","box","layers","bag","cart","file","pos","receipt","briefcase","book","target","gear","truck","chat","chart","bell","globe","store","lock"];
+document.getElementById('mods').innerHTML=M.map((m,i)=>`<div class="mod rv${i<2||['Punto de venta','Página web','E-commerce'].includes(m[0])?' hot':''}"><b><i data-i="${E[i]}"></i>${m[0]}</b><span>${m[1]}</span></div>`).join('');
+const names=M.map(m=>m[0]);document.getElementById('mq').innerHTML=[...names,...names].map(n=>`<span>${n} ✦</span>`).join('');
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=+e.target.dataset.n,s=performance.now();(function f(n){const p=Math.min((n-s)/1600,1);e.target.textContent=Math.round(t*(1-Math.pow(1-p,4)))+'+';p<1&&requestAnimationFrame(f)})(s);co.unobserve(e.target)}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(e=>co.observe(e));
+addEventListener('scroll',()=>{bar.style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%'},{passive:true});
+const g=document.getElementById('glow');addEventListener('pointermove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+document.querySelectorAll('.card,.mod').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');if(c.classList.contains('card'))c.style.transform=`perspective(900px) rotateX(${(y/r.height-.5)*-6}deg) rotateY(${(x/r.width-.5)*6}deg) translateY(-4px)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
+const fl=[...document.querySelectorAll('.fl')];let k=0;setInterval(()=>{fl.forEach((f,i)=>f.classList.toggle('on',i===k));k=(k+1)%fl.length},1300);
+
+const P={wallet:'<path d="M4 7a2 2 0 012-2h11v4"/><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="16.5" cy="13.5" r="1.2"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5.2a3.2 3.2 0 010 5.6M18 14.3c1.8.8 3 2.6 3 5.7"/>',box:'<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5L12 12l8-4.5M12 12v9"/>',layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',bag:'<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/>',cart:'<circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/><path d="M3 4h2.5l2 11h10.5l2-8H7"/>',file:'<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/>',store:'<path d="M4 9l1.5-5h13L20 9"/><path d="M4 9v11h16V9M4 9a2.7 2.7 0 005.3 0 2.7 2.7 0 005.4 0A2.7 2.7 0 0020 9M10 20v-5h4v5"/>',receipt:'<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>',briefcase:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/>',book:'<path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M5 17a3 3 0 013-3h11M9 8h6"/>',target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/>',truck:'<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/>',chat:'<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',chart:'<path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/>',bell:'<path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 004 0"/>',lock:'<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/>',ai:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>',plug:'<path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 01-12 0z"/><path d="M12 17v4"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',code:'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',shield:'<path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/>',key:'<circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5L20 3M16 7l3 3M14 9l2 2"/>',scan:'<path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3M8 12h8"/>',user:'<circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/>',pos:'<rect x="6" y="3" width="12" height="6" rx="1"/><path d="M4 21v-6a1 1 0 011-1h14a1 1 0 011 1v6zM9 17h.01M12 17h.01M15 17h.01"/>',warn:'<path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.5v.1"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',ok:'<path d="M5 12.5l4.5 4.5L19 7.5"/>'};
+const fi=()=>document.querySelectorAll('[data-i]').forEach(e=>{if(!e.firstChild)e.innerHTML='<svg viewBox="0 0 24 24">'+P[e.dataset.i]+'</svg>'});
+const rw=(a,b,c,k='g')=>`<div class="rw"><span>${a}</span><span class="mu">${b}</span><em class="ch ${k}">${c}</em></div>`;
+const br=(a,v,t,k='')=>`<div class="rw"><span>${a}</span><div class="sp ${k}"><s style="width:${v}%"></s></div><em class="ch ${k?'o':'g'}">${t}</em></div>`;
+const bb=(t,m)=>`<div class="bb${m?' me':''}">${t}</div>`;
+const L=[["shield","Acceso protegido","Todo empieza por la puerta: cada persona entra con su propio usuario y una contraseña que se guarda cifrada.",["Contraseñas cifradas","Usuario único por persona","Bloqueo ante intentos fallidos"]],["key","Verificación en dos pasos","Un código extra confirma que eres tú, y cada persona ve solo lo que le corresponde.",["Código de verificación","Permisos por rol","Historial de quién cambió qué"]]];
+const S=[["wallet","Nómina","Tu equipo y sus pagos, en orden: empleados, novedades, liquidación y el historial de cada pago.",["Empleados y novedades","Liquidación","Historial de pagos"],()=>[rw('Ana M.','Liquidación','Pagada'),rw('Carlos R.','Horas extra','Revisar','o'),rw('Laura P.','Liquidación','Pagada'),'<div class="cp">Historial de cada pago guardado</div>']],
+["box","Inventario","Sabes qué tienes y qué se está acabando: existencias, mínimos, entradas y salidas, con alerta a tiempo.",["Existencias y mínimos","Entradas y salidas","Alerta de faltantes"],()=>[br('Producto A',82,'82 uds'),br('Producto B',46,'46 uds'),br('Producto C',12,'Bajo mínimo','lo'),'<div class="al"><i data-i="warn"></i>Producto C por debajo del mínimo</div>']],
+["cart","Ventas","Acompañas a cada cliente desde el primer contacto hasta el cobro: cotización, pedido y pago.",["Cotizaciones con precio","Paso directo al pedido","Cobro y canal"],()=>['<div class="pl"><div><b>Cotización</b><span>Con precio</span></div><div><b>Pedido</b><span>Confirmado</span></div><div><b>Cobro</b><span>Registrado</span></div></div>',rw('Cliente demo','Cotización → Pedido','Listo'),rw('Pedido #0148','Cobro','Pagado')]],
+["pos","Punto de venta (POS)","Vende en el mostrador de forma rápida: cliente, productos y pago en el momento.",["Venta de mostrador","Cliente y productos","Pago al instante"],()=>[`<div class="tk">${rw('Producto A × 2','','$ 40.000','n')}${rw('Producto B × 1','','$ 58.000','n')}<div class="tt"><span>Total</span><b>$ 98.000</b></div></div>`,'<div class="pay"><span>Efectivo</span><span class="on">Tarjeta</span><span>Transferencia</span></div>','<div class="lb ok">Cobrar y facturar ✓</div>']],
+["receipt","Facturación","Facturas sin doble digitación: cada documento queda ligado al pedido, al inventario y a la cartera.",["Ligada al pedido","Descuenta inventario","Alimenta la cartera"],()=>[rw('Factura #0231','Pedido #0148','Emitida'),rw('Total','','$ 98.000','n'),'<div class="fl2"><span>Pedido ✓</span><span>Inventario ✓</span><span>Cartera ✓</span></div>']],
+["briefcase","Cartera","Ves quién te debe y cuánto, al instante, sin armar el cuadro a mano.",["Saldo por cliente","Cobrado y pendiente","Sin cuadros a mano"],()=>[br('Cliente A',90,'Al día'),br('Cliente B',55,'55% cobrado'),br('Cliente C',20,'Pendiente','lo')]],
+["book","Contabilidad","Tus números siempre claros: pagos, comprobantes y el dinero cruzado con lo que pasa en tu operación.",["Pagos y comprobantes","Cruce con la operación","Dato escrito una sola vez"],()=>[rw('Comprobante 0012','Ventas','Cruzado'),rw('Comprobante 0013','Pagos','Cruzado'),rw('Comprobante 0014','Compras','Cruzado'),'<div class="cp">Cada dato se escribe una vez</div>']],
+["globe","Página web","Una página con tu identidad, moderna y fácil de usar, conectada con tu sistema para que tus clientes te encuentren y te escriban.",["Identidad propia","Interacción clara","Enlazada a catálogo, formulario o WhatsApp"],()=>['<div class="wp"><div class="wpn"><s></s><s></s><s></s><s></s></div><div class="wph"><b>Tu empresa</b><i></i><i class="s"></i><div class="lb">Cotiza ahora</div></div><div class="wpc"><div></div><div></div><div></div></div></div>','<div class="fl2"><span>Diseño ✓</span><span>Responsive ✓</span><span>WhatsApp ✓</span></div>']],
+["store","E-commerce","Vende en línea las 24 horas: catálogo, carrito y pago, con cada pedido llegando directo a tu sistema.",["Catálogo de productos","Carrito y pago","Pedidos al sistema"],()=>['<div class="pr"><div>Producto A<b>$ 40.000</b></div><div>Producto B<b>$ 58.000</b></div><div>Producto C<b>$ 35.000</b></div></div>',rw('Carrito','2 productos','$ 98.000','n'),'<div class="lb ok">Pagar ahora ✓</div>','<div class="fl2"><span>Pago ✓</span><span>Pedido ✓</span><span>Inventario ✓</span></div>']],
+["chat","WhatsApp","Atiende a tus clientes donde ya están: una bandeja de chats y un asistente que arma la solicitud por ti.",["Bandeja de chats","Respuestas","Asistente de solicitudes"],()=>[bb('Hola, quiero cotizar 20 unidades',1),bb('¡Claro! Armo tu solicitud. ¿Para qué fecha la necesitas?'),bb('Para el viernes',1),rw('Solicitud creada','','En el CRM')]],
+["ai","Inteligencia artificial","Un asistente que conoce tu negocio: consulta pedidos, saldos e inventario y atiende a tus clientes incluso fuera de horario.",["Consulta pedidos y saldos","Responde al cliente","Atiende fuera de horario"],()=>[bb('¿Cuál es el saldo del Cliente B?',1),bb('Tiene 2 facturas pendientes. ¿Te envío el detalle?'),rw('Atención','Fuera de horario','Activa','o')]],
+["chart","Tableros","Cómo va tu día de un vistazo: ventas, saldos, producción e inventario en una sola pantalla.",["Ventas y saldos","Producción e inventario","Decisiones a la vista"],()=>['<div class="kp"><div><b>Ventas</b><span>del día</span></div><div><b>Saldos</b><span>por cobrar</span></div><div><b>Stock</b><span>disponible</span></div></div>',br('Producción',70,'En marcha'),br('Inventario',58,'Estable')]]];
+const A=[...L,...S],N=A.length,sd=document.getElementById('side'),bd=document.getElementById('build');
+sd.innerHTML=A.map(x=>`<div><i data-i="${x[0]}"></i>${x[1]}</div>`).join('');
+const xp=(x,lb)=>`<div class="xp"><div class="big" data-i="${x[0]}"></div><div class="sn">${lb}</div><h3>${x[1]}</h3><p>${x[2]}</p><ul class="bul">${x[3].map((b,k)=>`<li style="animation-delay:${k*90+150}ms"><i data-i="ok"></i>${b}</li>`).join('')}</ul></div>`;
+let ln=-1,tm;
+function show(n){const x=A[n-1];clearTimeout(tm);mp.classList.add('cl');tm=setTimeout(()=>{mp.innerHTML=xp(x,n==N?'Último módulo · sistema listo ✔':`Módulo ${n-2} de ${S.length}`)+`<div class="mk">${x[4]().join('')}<div class="cap">Vista de ejemplo</div></div>`;mp.dataset.n=String(n-2).padStart(2,'0');mp.classList.remove('cl','op');void mp.offsetWidth;mp.classList.add('op');fi()},ln>=3?230:0)}
+function ub(){const r=bd.getBoundingClientRect();if(!r.height)return;const v=innerHeight,p=Math.max(0,Math.min(1,(v*.8-r.top)/(r.height-v*.2))),n=Math.ceil(p*N);
+[...sd.children].forEach((t,i)=>{t.classList.toggle('dn',i<n-1);t.classList.toggle('cur',i==n-1)});const cc=sd.children[Math.max(n-1,0)];sd.scrollTop=cc.offsetTop-sd.clientHeight/2+cc.offsetHeight/2;
+lg.classList.toggle('off',n>=3);lu.textContent=n>=1?'usuario@tuempresa.com':'';lp.textContent=n>=1?'••••••••••':'';
+[...cd.children].forEach((b,k)=>b.textContent=n>=2?'482916'[k]:'');cd.classList.toggle('ok',n>=2);lb.textContent=n>=2?'✓ Acceso verificado':'Entrar';lb.classList.toggle('ok',n>=2);
+[...sc.children].forEach((c,k)=>c.classList.toggle('on',n>=(k?2:1)));
+bfill.style.width=p*100+'%';bpct.textContent=Math.round(p*100)+'%';bstep.textContent=String(n).padStart(2,'0')+'/'+N;
+if(n!==ln){if(n<3){li.innerHTML=xp(A[Math.max(n,1)-1],`Seguridad · paso ${Math.max(n,1)} de 2`);mp.classList.add('cl')}else show(n);ln=n;fi()}}
+fi();
+addEventListener('scroll',ub,{passive:true});
+const R=['inicio','servicios','erp','modulos','porque','contacto'];
+function route(){let r=location.hash.replace('#','')||'inicio';if(!R.includes(r))r='inicio';
+document.querySelectorAll('.pg').forEach(x=>x.classList.toggle('act',x.id==='p-'+r));
+document.querySelectorAll('nav a.l').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+r));
+scrollTo({top:0,behavior:'instant'});ub()}
+addEventListener('hashchange',route);route();
+
+const cf=document.getElementById('cf'),cfm=document.getElementById('cfm');
+cf.addEventListener('submit',async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(cf));
+const txt=`Hola Daniel, soy ${d.nombre}${d.empresa?' de '+d.empresa:''}.\nMe interesa: ${d.interes}.\nTeléfono: ${d.telefono}${d.correo?'\nCorreo: '+d.correo:''}${d.mensaje?'\n\n'+d.mensaje:''}`;
+const wa='https://wa.me/573227043082?text='+encodeURIComponent(txt),mt='mailto:daniel5480@hotmail.com?subject='+encodeURIComponent('Solicitud desde tu página web')+'&body='+encodeURIComponent(txt);
+window.open(wa,'_blank');cfm.innerHTML='Abriendo WhatsApp… Si no se abrió, <a href="'+wa+'" target="_blank" rel="noopener">toca aquí</a>.';
+try{const r=await fetch('https://formsubmit.co/ajax/daniel5480@hotmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({nombre:d.nombre,empresa:d.empresa,telefono:d.telefono,correo:d.correo,interes:d.interes,mensaje:d.mensaje,_subject:'Nueva solicitud desde tu página web',_template:'table',_captcha:'false'})});if(!r.ok)throw 0;cfm.innerHTML+=' También quedó enviado al correo de Daniel. ¡Gracias!';cf.reset()}catch(_){cfm.innerHTML+=' Para el correo, <a href="'+mt+'">envíalo desde tu app de correo</a>.'}});
+fi();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+PAGINA WEB - DANIEL FELIPE BUITRON VELASQUEZ
+
+VER LA PAGINA (elige una):
+1) Windows: doble clic en iniciar.bat  -> abre http://localhost:8080
+2) Mac/Linux: ./iniciar.sh             -> abre http://localhost:8080
+3) Con Docker (maquina virtual/contenedor): docker compose up --build
+4) Sin nada: doble clic en index.html (funciona igual; con internet carga las fuentes de Google)
+
+Para publicarla en internet sube index.html a cualquier hosting (Netlify, Vercel, Hostinger, etc.).
+Para cambiar telefono/textos edita index.html con cualquier editor.
