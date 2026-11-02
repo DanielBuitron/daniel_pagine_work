@@ -249,6 +249,9 @@ nav{gap:18px}nav a.l.cur{color:#fff;position:relative}nav a.l.cur:after{content:
 .mb2{display:flex;gap:3px;align-items:flex-end;height:22px;margin-top:8px}.mb2 s{flex:1;background:var(--g);border-radius:3px 3px 0 0;opacity:.8;transform-origin:bottom}.t1.on .mb2 s{animation:gr .9s both}
 .l1{position:absolute;inset:0;z-index:3;background:#120b10;display:grid;place-items:center;transition:.7s cubic-bezier(.2,.7,.2,1)}.l1.off{opacity:0;transform:scale(1.06);filter:blur(8px);pointer-events:none}
 @media(max-width:900px){.b1{grid-template-columns:1fr;gap:12px}.b1l .sub,.b1l .pct span:last-child{display:none}.b1l h2{font-size:26px;margin:2px 0 6px}.b1l .bul{margin-top:8px;gap:4px}.b1l .bul li{font-size:13px}.b1l .bul li:nth-child(n+3){display:none}.b1l .pbar{margin-top:10px}.w1w{height:calc(100vh - 330px);min-height:300px}.w1b{grid-template-columns:1fr}.w1s{display:none}.w1t{grid-template-columns:repeat(3,1fr);padding:10px;gap:8px}.mb2{display:none}.t1{padding:8px}}
+
+.fab{display:none;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:55;align-items:center;padding:13px 22px;border-radius:99px;background:var(--g);color:#1a0b12;font-weight:600;box-shadow:0 14px 40px -8px rgba(255,107,154,.6)}
+@media(max-width:900px){nav .btn{display:inline-flex;flex:none;position:sticky;right:0;padding:7px 14px;font-size:13px;white-space:nowrap}nav a.l{font-size:13px}.fab{display:inline-flex}}
 </style>
 </head>
 <body>
@@ -367,7 +370,7 @@ const R=['inicio','servicios','erp','modulos','porque','contacto'];
 function route(){let r=location.hash.replace('#','')||'inicio';if(!R.includes(r))r='inicio';
 document.querySelectorAll('.pg').forEach(x=>x.classList.toggle('act',x.id==='p-'+r));
 document.querySelectorAll('nav a.l').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+r));
-scrollTo({top:0,behavior:'instant'});ub()}
+scrollTo({top:0,behavior:'instant'});document.querySelector('.fab').style.visibility=r=='contacto'?'hidden':'visible';ub()}
 addEventListener('hashchange',route);route();
 
 const cf=document.getElementById('cf'),cfm=document.getElementById('cfm');
@@ -378,5 +381,6 @@ window.open(wa,'_blank');cfm.innerHTML='Abriendo WhatsApp… Si no se abrió, <a
 try{const r=await fetch('https://formsubmit.co/ajax/daniel5480@hotmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({nombre:d.nombre,empresa:d.empresa,telefono:d.telefono,correo:d.correo,interes:d.interes,mensaje:d.mensaje,_subject:'Nueva solicitud desde tu página web',_template:'table',_captcha:'false'})});if(!r.ok)throw 0;cfm.innerHTML+=' También quedó enviado al correo de Daniel. ¡Gracias!';cf.reset()}catch(_){cfm.innerHTML+=' Para el correo, <a href="'+mt+'">envíalo desde tu app de correo</a>.'}});
 fi();
 </script>
+<a class="fab" href="#contacto">Contacto</a>
 </body>
 </html>
